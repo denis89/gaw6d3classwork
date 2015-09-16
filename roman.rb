@@ -12,7 +12,7 @@ VALUES =
 
 def romanize n
   if n < 100 && n > 50
-   m = convert50(n)
+   m = convert100(n)
    puts m
 
   end
@@ -78,61 +78,44 @@ def convert10 m
      end
 end
 
-def convert10 m
-  if m < 50 &&  m > 40   
-     o = m - 40
-     i = convert5(o)
-     m = 'XXXX'
-     return m + i
-    elsif m < 40 &&  m > 30
-     o = m - 30
-     i = convert5(o)
-     m = 'XXX'
-     return m + i
-      
-    elsif m < 30 && m > 20
-       o = m - 20
-     i = convert5(o)
-     m = 'XX'
-     return m + i
-    elsif m < 20 && m > 10
-       o = m - 20
-     i = convert5(o)
-     m = 'X'
-     return m + i
-     end
-end
 
 
-def convert50 m
+
+def convert100 m
   if m < 100 &&  m > 90   
      o = m - 90
      i = convert5(o)
-     m = 'XXXX'
+     m = 'LXXXX'
      return m + i
-    elsif m < 40 &&  m > 30
-     o = m - 30
+    elsif m < 90 &&  m > 80
+     o = m - 80
      i = convert5(o)
-     m = 'XXX'
+     m = 'LXXX'
      return m + i
       
-    elsif m < 30 && m > 20
-       o = m - 20
+    elsif m < 80 && m > 70
+       o = m - 70
      i = convert5(o)
-     m = 'XX'
+     m = 'LXX'
      return m + i
-    elsif m < 20 && m > 10
-       o = m - 20
+    elsif m < 70 && m > 60
+       o = m - 60
      i = convert5(o)
-     m = 'X'
+     m = 'LX'
      return m + i
-     end
+     
+   else m < 60 && m > 50
+    o = m - 50
+     i = convert5(o)
+     m = 'L'
+     return m + i
+   end
 end
 
 
  # roman = ""
 
- puts romanize(11) 
+ puts romanize(42) 
   
   #VALUES.each do |pair|
    
